@@ -59,7 +59,7 @@ export const getTokenPriceData = async () => {
       (token) => token.price != null
     );
   }
-  return validTokens;
+  return validTokens.sort((a, b) => b.change - a.change);
 };
 
 export const getRawTokenListFromAPI = async (from, limit) => {

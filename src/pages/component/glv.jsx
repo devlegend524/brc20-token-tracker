@@ -13,7 +13,7 @@ function Gainer(props) {
       const changeOrder = data1.sort((a, b) => a.change - b.change);
       const volumeOrder = data2.sort((a, b) => b.marketCap - a.marketCap);
       setData({
-        Gainer: changeOrder.slice(-4),
+        Gainer: changeOrder.slice(-4).sort((a, b) => b.change - a.change),
         Looser: changeOrder.slice(0, 4),
         VolumeUSD: volumeOrder.slice(0, 4),
       });
